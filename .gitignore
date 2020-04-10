@@ -15,3 +15,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+*.gz
+*.log
+*.tgz
+redis-5.2.1/
