@@ -16,9 +16,13 @@ class RedisController extends Controller
 
     public function redisAction(Request $request)
     {
-        $client = $this->get("snc_redis.default");
-        $client->set("aa", "bbb");
-        dump($client->get('aa'));
+        try {
+            $client = $this->get("snc_redis.default");
+            $client->set("aa", "bbb");
+            dump($client->get('aa'));
+        } catch (\Throwable $exception) {
+            $this->get('logger')->err("error " . $exception->getMessage());
+        }
         return new Response("<html><body>hello world</body></html>");
     }
 }

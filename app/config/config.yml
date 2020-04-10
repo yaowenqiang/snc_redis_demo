@@ -69,8 +69,8 @@ snc_redis:
             logging: "%kernel.debug%"
             options:
                 prefix: app
-                connection_timeout: 0.1
-                read_write_timeout: 0.1
+                connection_timeout: 100
+                read_write_timeout: 100
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
