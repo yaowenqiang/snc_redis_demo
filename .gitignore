@@ -19,3 +19,5 @@
 *.log
 *.tgz
 redis-5.2.1/
+*.rdb
+.idea
