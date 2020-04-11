@@ -65,7 +65,10 @@ snc_redis:
         default:
             type: predis
             alias: default
-            dsn: redis://localhost
+            dsn: redis://192.168.1.47:6377
+            options:
+                connection_timeout: 2
+                read_write_timeout: 2
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
