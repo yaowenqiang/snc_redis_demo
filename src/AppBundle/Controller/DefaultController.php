@@ -26,10 +26,16 @@ class DefaultController extends Controller
         $form = $this->createFormBuilder($task)
             ->add('task', TextType::class)
             ->add('dueDate', DateType::class)
+            ->add('taskDesc', TextType::class)
             ->add('save', SubmitType::class, [
                 'label' => 'Create Task',
             ])
             ->getForm();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $task = $form->getData();
+        }
 
 
         // replace this example code with whatever you need
